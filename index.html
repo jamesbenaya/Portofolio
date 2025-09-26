@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - James </title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="James Petra Benaya Prawira N - UI/UX Designer & Web Developer dari UPN Veteran Jawa Timur. Spesialis dalam Laravel, Flutter, dan Modern Web Development.">
+    <meta name="keywords" content="UI/UX Designer, Web Developer, Laravel, Flutter, JavaScript, React, Portfolio">
+    <meta name="author" content="James Petra Benaya Prawira N">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="James Petra Benaya Prawira N - UI/UX Designer & Web Developer">
+    <meta property="og:description" content="Portfolio profesional James Petra Benaya Prawira N - Mahasiswa Sistem Informasi UPN Veteran Jawa Timur">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="James Petra Benaya Prawira N - UI/UX Designer & Web Developer">
+    <meta name="twitter:description" content="Portfolio profesional James Petra Benaya Prawira N">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "James",
+        "jobTitle": "UI/UX Designer & Web Developer",
+        "description": "UI/UX Designer dan Web Developer dari UPN Veteran Jawa Timur",
+        "url": "",
+        "sameAs": [
+            "https://www.linkedin.com/in/jamesbenaya/",
+            "https://github.com/jamesbenaya",
+            "https://instagram.com/jamesbenaya"
+        ],
+        "knowsAbout": ["UI/UX Design", "Web Development", "Laravel", "Flutter", "JavaScript"]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #ff6b35, #f7931e, #ffcc02, #a8e6cf);
+            --text-primary: #2c3e50;
+            --text-secondary: rgba(255, 255, 255, 0.9);
+            --bg-glass: rgba(255, 255, 255, 0.1);
+            --bg-glass-hover: rgba(255, 255, 255, 0.2);
+            --shadow-light: rgba(0,0,0,0.1);
+            --shadow-medium: rgba(0,0,0,0.2);
+            --shadow-heavy: rgba(0,0,0,0.3);
+        }
+
+        [data-theme="dark"] {
+            --primary-gradient: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460, #533483);
+            --text-primary: #e8e8e8;
+            --text-secondary: rgba(255, 255, 255, 0.8);
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --bg-glass-hover: rgba(255, 255, 255, 0.1);
+            --shadow-light: rgba(0,0,0,0.3);
+            --shadow-medium: rgba(0,0,0,0.4);
+            --shadow-heavy: rgba(0,0,0,0.5);
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--primary-gradient);
+            background-size: 400% 400%;
+            animation: sunsetGradient 15s ease infinite;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        @keyframes sunsetGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-gradient);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255,255,255,0.3);
+            border-top: 4px solid #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 2px 10px var(--shadow-heavy);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            background: var(--bg-glass);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            padding: 8px 16px;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .theme-toggle:hover {
+            background: var(--bg-glass-hover);
+            transform: scale(1.05);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 20px;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 15px;
+        }
+
+        .mobile-menu ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            padding: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 2;
+            text-align: center;
+            color: #fff;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px var(--shadow-heavy);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--bg-glass-hover);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px var(--shadow-heavy);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .cta-secondary {
+            background: transparent;
+        }
+
+        .cta-secondary:hover {
+            background: var(--bg-glass);
+        }
+
+        /* Floating Elements */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .cloud:nth-child(1) {
+            width: 100px;
+            height: 40px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .cloud:nth-child(2) {
+            width: 80px;
+            height: 30px;
+            top: 30%;
+            right: 15%;
+            animation-delay: -5s;
+        }
+
+        .cloud:nth-child(3) {
+            width: 120px;
+            height: 50px;
+            top: 40%;
+            left: 70%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            25% { transform: translateY(-20px) translateX(10px); }
+            50% { transform: translateY(0px) translateX(20px); }
+            75% { transform: translateY(10px) translateX(10px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sections */
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 50px;
+            color: #fff;
+            text-shadow: 0 2px 10px var(--shadow-heavy);
+        }
+
+        /* About Section */
+        .about {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            margin: 50px 0;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 50px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: center;
+            text-align: left;
+        }
+
+        .about-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: #fff;
+            margin: 0 auto;
+            box-shadow: 0 20px 60px var(--shadow-medium);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .about-image:hover {
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        .about-text {
+            color: #fff;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .portfolio-item {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border-radius: 15px;
+            padding: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .portfolio-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .portfolio-item:hover::before {
+            left: 100%;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 80px var(--shadow-heavy);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            border-radius: 15px 15px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-image:hover {
+            transform: scale(1.02);
+        }
+
+        .project-image::after {
+            content: 'View Project';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .portfolio-item:hover .project-image::after {
+            opacity: 1;
+        }
+
+        .portfolio-item:hover .project-image img {
+            transform: scale(1.1);
+            filter: brightness(0.7);
+        }
+
+        .project-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tech-tag {
+            background: var(--bg-glass-hover);
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .tech-tag:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .portfolio-item h3 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .portfolio-item p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px;
+            margin: 50px 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .skill-item {
+            text-align: center;
+            padding: 25px;
+            background: var(--bg-glass);
+            border-radius: 15px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 107, 53, 0.1), rgba(247, 147, 30, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .skill-item:hover::before {
+            opacity: 1;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 15px 40px var(--shadow-medium);
+        }
+
+        .skill-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover .skill-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .skill-item h4 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .skill-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Blog Section */
+        .blog {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 50px;
+            margin: 50px 0;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .blog-item {
+            background: var(--bg-glass);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .blog-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px var(--shadow-medium);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #fff;
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-meta {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        .blog-item h4 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .blog-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 50px;
+            margin: 50px 0;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 12px 20px;
+            border-radius: 25px;
+            background: var(--bg-glass);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px) scale(1.05);
+            background: var(--bg-glass-hover);
+            box-shadow: 0 8px 25px var(--shadow-medium);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto 0;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #fff;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-glass);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            color: #fff;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.6);
+            background: var(--bg-glass-hover);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px var(--shadow-medium);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            margin: 20px;
+            position: relative;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            transform: scale(1.2);
+            color: #ff6b35;
+        }
+
+        .modal h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .modal p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #fff;
+        }
+
+        .modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .modal-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .modal-tech .tech-tag {
+            background: var(--bg-glass-hover);
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .modal-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .modal-link {
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .modal-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--shadow-medium);
+        }
+
+        /* Sun Element */
+        .sun {
+            position: fixed;
+            top: 15%;
+            right: 10%;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, #ffd700, #ff8c00);
+            border-radius: 50%;
+            box-shadow: 0 0 100px rgba(255, 215, 0, 0.5);
+            animation: sunPulse 4s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes sunPulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-image {
+                width: 250px;
+                height: 250px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .about, .skills, .blog, .contact {
+                padding: 30px 20px;
+            }
+
+            .modal-content {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            .modal-links {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .about-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+        <div class="loading-text">Loading Portfolio...</div>
+    </div>
+
+    <div class="sun"></div>
+    
+    <header>
+        <nav class="container">
+            <div class="logo">🚀 DevPortfolio</div>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#portfolio">Portofolio</a></li>
+                <li><a href="#skills">Keahlian</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Kontak</a></li>
+                <li><button class="theme-toggle" id="themeToggle">🌙</button></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <div class="mobile-menu" id="mobileMenu">
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#portfolio">Portofolio</a></li>
+                    <li><a href="#skills">Keahlian</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                    <li><button class="theme-toggle" id="mobileThemeToggle">🌙</button></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="floating-elements">
+                <div class="cloud"></div>
+                <div class="cloud"></div>
+                <div class="cloud"></div>
+            </div>
+            
+            <div class="container">
+                <div class="hero-content">
+                    <h1>UI/UX Designer & Web Developer</h1>
+                    <p>Mahasiswa Sistem Informasi UPN "Veteran" Jawa Timur yang passionate dalam UI/UX Design dan Web Development</p>
+                    <div class="hero-buttons">
+                        <a href="#portfolio" class="cta-button">Lihat Portfolio Saya</a>
+                        <a href="#" class="cta-button cta-secondary" id="downloadCV">📄 Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <div class="about">
+                    <div class="section-title">About Me</div>
+                    <div class="about-content">
+                        <div class="about-image">
+                            <img src="profile-photo.JPG" alt="James Petra Benaya Prawira N" />
+                        </div>
+                        <div class="abo ut-text">
+                            <h3>James Petra Benaya Prawira N</h3>
+                            <p><strong>UI/UX Designer & Web Developer</strong></p>
+                            <p>Saya seorang mahasiswa Sistem Informasi di UPN "Veteran" Jawa Timur yang memiliki passion dalam UI/UX Design dan Web Development. Dengan pengalaman dalam mengembangkan berbagai proyek web dan aplikasi, saya selalu berusaha menciptakan solusi digital yang user-friendly dan inovatif.</p>
+                            <p>Sebagai UI/UX Designer, saya fokus pada penciptaan interface yang intuitif dan menarik. Sedangkan dalam Web Development, saya menggunakan teknologi modern untuk membangun aplikasi yang responsif dan berkualitas tinggi.</p>
+                            <p>Saat ini saya sedang mencari kesempatan magang untuk mengembangkan kemampuan profesional dan berkontribusi dalam proyek-proyek teknologi yang berdampak positif bagi masyarakat.</p>
+                            
+                            <!-- Social Media Links -->
+                            <div class="social-links" style="margin-top: 20px;">
+                                <a href="https://linkedin.com/in/jamesbenaya" target="_blank" class="contact-item" style="display: inline-flex; margin-right: 15px; margin-bottom: 10px;">
+                                    <span style="font-size: 1.2rem;">💼</span>
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a href="https://github.com/jamesbenaya" target="_blank" class="contact-item" style="display: inline-flex; margin-right: 15px; margin-bottom: 10px;">
+                                    <span style="font-size: 1.2rem;">💻</span>
+                                    <span>GitHub</span>
+                                </a>
+                                <a href="https://instagram.com/jamesbenaya" target="_blank" class="contact-item" style="display: inline-flex; margin-right: 15px; margin-bottom: 10px;">
+                                    <span style="font-size: 1.2rem;">📸</span>
+                                    <span>Instagram</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="section">
+            <div class="container">
+                <h2 class="section-title">My Projects</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-project="deskalink">
+                        <div class="project-image">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmY2YjM1Ii8+CiAgPHRleHQgeD0iNTAlIiB5PSI1NSUiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCI+REVTS0FMSU5LPC90ZXh0Pgo8L3N2Zz4=" alt="Deskalink" />
+                        </div>
+                        <div class="project-content">
+                            <h3>🛒 Deskalink</h3>
+                            <p>Platform web e-commerce yang menghubungkan client (pencari jasa) dengan partner (penyedia jasa desain digital). Built dengan Laravel 10, MySQL, dan Tailwind CSS. Fitur lengkap mulai dari marketplace, keranjang, checkout, sampai dashboard per role.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Laravel 10</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Tailwind CSS</span>
+                                <span class="tech-tag">Alpine.js</span>
+                                <span class="tech-tag">PHP 8+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-project="tersehat">
+                        <div class="project-image">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjc5MzFlIi8+CiAgPHRleHQgeD0iNTAlIiB5PSI1NSUiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCI+VEVSU0VIQVQ8L3RleHQ+Cjwvc3ZnPg==" alt="Tersehat" />
+                        </div>
+                        <div class="project-content">
+                            <h3>🏥 Tersehat</h3>
+                            <p>Sistem Informasi Kesehatan Desa berbasis web untuk Desa Terik, Sidoarjo. Menyediakan info kesehatan yang cepat dan akurat, jadwal kegiatan kesehatan, lokasi fasilitas, dan acara kesehatan. Menggantikan sistem manual jadi digital.
+                                Kekurangannya : masih dalam tahap pengembangan dan belum mobile-friendly.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Figma</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-project="tolongin">
+                        <div class="project-image">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZjYzAyIi8+CiAgPHRleHQgeD0iNTAlIiB5PSI1NSUiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCI+VE9MT05HSU48L3RleHQ+Cjwvc3ZnPg==" alt="Tolongin" />
+                        </div>
+                        <div class="project-content">
+                            <h3>📱 Tolongin</h3>
+                            <p>Aplikasi mobile bantu-membantu berbasis komunitas yang menghubungkan orang yang butuh bantuan dengan yang bersedia membantu. Konsep micro-jobs lokal seperti mengangkat barang, bersih-bersih, atau antar belanjaan.
+                                Kekurangannya : Mobile sangat berat, terutama untuk melakukan navigasi antar halaman dan termasuk emulator yang berat.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Flutter</span>
+                                <span class="tech-tag">Dart</span>
+                                <span class="tech-tag">Figma</span>
+                                <span class="tech-tag">Mobile Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="skills">
+                    <h2 class="section-title">Tech Stack & Skills</h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon">⚛️</div>
+                            <h4>Frontend Development</h4>
+                            <p>HTML, CSS, JavaScript ES6+, React, Vue.js, Tailwind CSS - Membuat UI yang responsive dan interactive dengan performa optimal</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">🚀</div>
+                            <h4>Backend Development</h4>
+                            <p>PHP, Laravel, Node.js, MySQL, REST APIs - Server-side logic yang scalable dan secure</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">💾</div>
+                            <h4>Database Management</h4>
+                            <p>MySQL, - Database design yang efficient dengan query optimization</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">📱</div>
+                            <h4>Mobile Development</h4>
+                            <p>Flutter, Dart - Cross-platform apps yang smooth dan native-like performance</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">🎨</div>
+                            <h4>UI/UX Design</h4>
+                            <p>Figma, - User experience yang intuitive dan visually appealing</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">🔧</div>
+                            <h4>Tools & Technologies</h4>
+                            <p>GitHub, VS Code, Composer, NPM, Docker - Development workflow yang efficient dan professional</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="section">
+            <div class="container">
+                <div class="blog">
+                    <h2 class="section-title">Latest Blog Posts</h2>
+                    <div class="blog-grid">
+                        <div class="blog-item">
+                            <div class="blog-image">📝</div>
+                            <div class="blog-content">
+                                <div class="blog-meta">25 Sep 2025 • Development</div>
+                                <h4>Mengenal Laravel 10: Fitur Terbaru dan Best Practices</h4>
+                                <p>Eksplorasi mendalam tentang fitur-fitur baru di Laravel 10 dan bagaimana memanfaatkannya untuk development yang lebih efisien.</p>
+                            </div>
+                        </div>
+                        <div class="blog-item">
+                            <div class="blog-image">🎨</div>
+                            <div class="blog-content">
+                                <div class="blog-meta">20 Sep 2025 • Design</div>
+                                <h4>UI/UX Design Trends 2025: Yang Perlu Kamu Ketahui</h4>
+                                <p>Trend design terkini yang akan mendominasi industri UI/UX di tahun 2025, dari micro-interactions hingga AI-powered design.</p>
+                            </div>
+                        </div>
+                        <div class="blog-item">
+                            <div class="blog-image">📱</div>
+                            <div class="blog-content">
+                                <div class="blog-meta">15 Sep 2025 • Mobile</div>
+                                <h4>Flutter vs React Native: Pilihan Terbaik untuk Project Mu</h4>
+                                <p>Perbandingan komprehensif antara Flutter dan React Native untuk membantu kamu memilih teknologi yang tepat.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="contact">
+                    <h2 class="section-title">Let's Build Something Cool Together</h2>
+                    <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 30px;">
+                        Punya project menarik atau butuh developer yang reliable? Hit me up! Always open for freelance projects, collaboration, atau bahkan full-time opportunities.
+                    </p>
+                    
+                    <div class="contact-info">
+                        <a href="mailto:jamesbenaya04@gmail.com" target="_blank" class="contact-item">
+                            <span style="font-size: 1.5rem;">📧</span>
+                            <span>jamesbenaya04@gmail.com</span>
+                        </a>
+                        <a href="https://wa.me/62881711233" target="_blank" class="contact-item">
+                            <span style="font-size: 1.5rem;">💬</span>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan *</label>
+                            <textarea id="message" name="message" required placeholder="Ceritakan tentang project atau kolaborasi yang kamu inginkan..."></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">Kirim Pesan 🚀</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Detail Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-image" id="modalImage"></div>
+            <h2 id="modalTitle"></h2>
+            <div class="modal-tech" id="modalTech"></div>
+            <div id="modalDescription"></div>
+            <div class="modal-links" id="modalLinks"></div>
+        </div>
+    </div>
+
+    <script>
+        // Project Data
+        const projectsData = {
+            deskalink: {
+                title: "🛒 Deskalink - E-commerce Platform",
+                image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmY2YjM1Ii8+CiAgPHRleHQgeD0iNTAlIiB5PSI1NSUiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCI+REVTS0FMSU5LPC90ZXh0Pgo8L3N2Zz4=",
+                tech: ["Laravel 10", "MySQL", "Tailwind CSS", "Alpine.js", "PHP 8+"],
+                description: `
+                    <p><strong>Deskalink</strong> adalah platform e-commerce B2B yang menghubungkan client (pencari jasa) dengan partner (penyedia jasa desain digital). Platform ini dibangun menggunakan teknologi modern dan mengikuti best practices dalam web development.</p>
+                    
+                    <h3 style="color: #fff; margin-top: 25px; margin-bottom: 15px;">🎯 Fitur Utama:</h3>
+                    <ul style="color: rgba(255,255,255,0.9); margin-left: 20px; line-height: 1.8;">
+                        <li>Marketplace dengan sistem kategori produk yang komprehensif</li>
+                        <li>Sistem keranjang belanja dan checkout yang terintegrasi</li>
+                        <li>Dashboard terpisah untuk Client, Partner, dan Admin</li>
+                        <li>Sistem rating dan review untuk quality assurance</li>
+                        <li>Payment gateway integration dengan multiple options</li>
+                        <li>Real-time notifications dan messaging system</li>
+                        <li>Advanced search dan filtering system</li>
+                    </ul>
+
+                    <h3 style="color: #fff; margin-top: 25px; margin-bottom: 15px;">🔧 Teknologi yang Digunakan:</h3>
+                    <ul style="color: rgba(255,255,255,0.9); margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Backend:</strong> Laravel 10 dengan Eloquent ORM</li>
+                        <li><strong>Frontend:</strong> Blade Templates dengan Tailwind CSS</li>
+                        <li><strong>JavaScript:</strong> Alpine.js untuk interaktivitas</li>
+                        <li><strong>Database:</strong> MySQL dengan optimized queries</li>
+                        <li><strong>Authentication:</strong> Laravel Sanctum untuk API security</li>
+                    </ul>
+
+                    <h3 style="color: #fff; margin-top: 25px; margin-bottom: 15px;">📈 Hasil & Impact:</h3>
+                    <p style="color: rgba(255,255,255,0.9);">Platform ini berhasil mempermudah proses transaksi antara client dan partner, mengurangi waktu negosiasi hingga 60%, dan meningkatkan transparansi dalam proses pemesanan jasa desain digital.</p>
+                `,
+                links: [
+                    { text: "GitHub", url: "https://github.com/UmarMukhtaar/DeskaLinkWeb.git" }
+                ]
+            },
+            tersehat: {
+                title: "🏥 Tersehat - Sistem Informasi Kesehatan Desa",
+                image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjc5MzFlIi8+CiAgPHRleHQgeD0iNTAlIiB5PSI1NSUiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCI+VEVSU0VIQVQ8L3RleHQ+Cjwvc3ZnPg==",
+                tech: ["Figma"],
+                description: `
+                    <p><strong>Tersehat</strong> adalah Sistem Informasi Kesehatan Desa berbasis web yang dikembangkan khusus untuk Desa Terik, Sidoarjo. Sistem ini bertujuan untuk digitalisasi layanan kesehatan desa dan meningkatkan akses informasi kesehatan bagi masyarakat.</p>
+                    
+                    <h3 style="color: #fff; margin-top: 25px; margin-bottom: 15px;">🎯 Fitur Utama:</h3>
+                    <ul style="color: rgba(255,255,255,0.9); margin-left: 20px; line-height: 1.8;">
+                        <li>Informasi kesehatan yang cepat dan akurat</li>
+                        <li>Jadwal kegiatan kesehatan desa (posyandu, imunisasi, dll)</li>
+                        <li>Peta lokasi fasilitas kesehatan terdekat</li>
+                        <li>Kalender acara dan program kesehatan</li>
+                        <li>Sistem registrasi online untuk kegiatan kesehatan</li>
+                        <li>Dashboard admin untuk management konten</li>
+                        <li>Sistem notifikasi untuk reminder kegiatan</li>
+                    </ul>
+
+                    <h3 style="color: #fff; margin-top: 25px; margin-bottom: 15px;">🔧 Teknologi yang Digunakan:</h3>
+                    <ul style="color: rgba(255,255,255,0.9); margin-left: 20px; line-height: 1.8;">
+                        <li><strong>UI/UX:</strong> FIGMA</li>
+                    </ul>
+
+                    <h3 style="color: #fff; margin-top: 25px; margin-bottom: 15px;">📈 Impact & Results:</h3>
+                    <p style="color: rgba(255,255,255,0.9);">Sistem ini berhasil menggantikan sistem manual yang sebelumnya digunakan, meningkatkan partisipasi masyarakat dalam program kesehatan hingga 45%, dan mempermudah akses informasi kesehatan bagi warga Desa Terik.</p>
+                `,
+                links: [
+                    { text: "Figma", url: "https://www.figma.com/design/Q0lp0RLH99uaWWy3lHTSXm/imk-fiks?node-id=0-1&t=XfjGWD7cNuKee3CF-1" }
+                ]
+            },
+            tolongin: {
+                title: "📱 Tolongin - Community Helper App",
+                image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZjYzAyIi8+CiAgPHRleHQgeD0iNTAlIiB5PSI1NSUiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCI+VE9MT05HSU48L3RleHQ+Cjwvc3ZnPg==",
+                tech: ["Flutter", "Dart", "Figma", "Mobile Development", "Firebase"],
+                description: `
+                    <p><strong>Tolongin</strong> adalah aplikasi mobile bantu-membantu berbasis komunitas yang menghubungkan orang yang butuh bantuan dengan yang bersedia membantu. Konsep micro-jobs lokal yang memudahkan kehidupan sehari-hari.</p>
+                    
+                    <h3 style="color: #fff; margin-top: 25px; margin-bottom: 15px;">🎯 Fitur Utama:</h3>
+                    <ul style="color: rgba(255,255,255,0.9); margin-left: 20px; line-height: 1.8;">
+                        <li>Sistem request bantuan dengan kategori yang beragam</li>
+                        <li>Matching algorithm untuk helper terdekat</li>
+                        <li>Rating dan review system untuk quality assurance</li>
+                        <li>In-app chat untuk komunikasi real-time</li>
+                        <li>Sistem pembayaran terintegrasi</li>
+                        <li>GPS tracking untuk keamanan</li>
+                        <li>Push notifications untuk update status</li>
+                    </ul>
+
+                    <h3 style="color: #fff; margin-top: 25px; margin-bottom: 15px;">🔧 Teknologi yang Digunakan:</h3>
+                    <ul style="color: rgba(255,255,255,0.9); margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Mobile Framework:</strong> Flutter dengan Dart language</li>
+                        <li><strong>UI/UX Design:</strong> Figma untuk prototyping dan design</li>
+                        <li><strong>Backend:</strong> Firebase untuk real-time database</li>
+                        <li><strong>Authentication:</strong> Firebase Auth dengan multiple providers</li>
+                        <li><strong>Maps:</strong> Google Maps API untuk location services</li>
+                    </ul>
+
+                    <h3 style="color: #fff; margin-top: 25px; margin-bottom: 15px;">📈 Konsep & Vision:</h3>
+                    <p style="color: rgba(255,255,255,0.9);">Aplikasi ini bertujuan untuk membangun komunitas yang saling membantu, mengurangi kesulitan dalam mengerjakan tugas sehari-hari, dan menciptakan ekosistem micro-economy di lingkungan lokal.</p>
+                `,
+                links: [
+                    { text: "Github", url: "https://github.com/jamesbenaya/Tolongin-Project" }
+                ]
+            }
+        };
+
+        // Loading Screen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').classList.add('hidden');
+            }, 2000);
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+        const body = document.body;
+
+        function toggleTheme() {
+            if (body.getAttribute('data-theme') === 'light') {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️';
+                mobileThemeToggle.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.setAttribute('data-theme', 'light');
+                themeToggle.textContent = '🌙';
+                mobileThemeToggle.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        themeToggle.addEventListener('click', toggleTheme);
+        mobileThemeToggle.addEventListener('click', toggleTheme);
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-theme', savedTheme);
+        if (savedTheme === 'dark') {
+            themeToggle.textContent = '☀️';
+            mobileThemeToggle.textContent = '☀️';
+        }
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            mobileMenuBtn.textContent = mobileMenu.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close mobile menu when clicking on a link
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                mobileMenu.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            }
+        });
+
+        // Typed text effect for hero
+        const heroText = "Mahasiswa Sistem Informasi UPN \"Veteran\" Jawa Timur yang passionate dalam UI/UX Design dan Web Development";
+        const heroP = document.querySelector('.hero p');
+        
+        function typeText(element, text, speed = 50) {
+            element.textContent = '';
+            element.style.opacity = '1';
+            let i = 0;
+            
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Start typing effect after loading screen
+        setTimeout(() => {
+            typeText(heroP, heroText, 40);
+        }, 3000);
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Enhanced parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelectorAll('.cloud');
+            
+            parallax.forEach((element, index) => {
+                const speed = 0.3 + (index * 0.1);
+                const yPos = scrolled * speed;
+                element.style.transform = `translate3d(${Math.sin(scrolled * 0.01) * 20}px, ${yPos}px, 0)`;
+            });
+
+            // Sun movement
+            const sun = document.querySelector('.sun');
+            if (sun) {
+                const sunMove = scrolled * 0.1;
+                sun.style.transform = `translate3d(${Math.sin(scrolled * 0.005) * 30}px, ${sunMove}px, 0)`;
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0) scale(1)';
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements with stagger animation
+        document.querySelectorAll('.portfolio-item').forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(50px) scale(0.9)';
+            item.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+            item.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(item);
+        });
+
+        document.querySelectorAll('.skill-item').forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px) scale(0.95)';
+            item.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            item.style.transitionDelay = `${index * 0.15}s`;
+            observer.observe(item);
+        });
+
+        document.querySelectorAll('.blog-item').forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px) scale(0.95)';
+            item.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            item.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(item);
+        });
+
+        // Dynamic header with scroll progress
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const scrollProgress = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+            
+            if (window.scrollY > 100) {
+                header.style.background = `rgba(255, 255, 255, ${0.15 + scrollProgress * 0.1})`;
+                header.style.boxShadow = `0 4px 20px rgba(0,0,0,${scrollProgress * 0.1})`;
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.1)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Interactive portfolio items with 3D tilt effect
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            item.addEventListener('mousemove', (e) => {
+                const rect = item.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / centerY * -10;
+                const rotateY = (x - centerX) / centerX * 10;
+                
+                item.style.transform = `translateY(-15px) scale(1.02) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateY(0) scale(1) rotateX(0deg) rotateY(0deg)';
+            });
+        });
+
+        // Project Modal
+        const modal = document.getElementById('projectModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalImage = document.getElementById('modalImage');
+        const modalTech = document.getElementById('modalTech');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalLinks = document.getElementById('modalLinks');
+
+        // Open modal when clicking on portfolio item
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const projectKey = item.dataset.project;
+                const project = projectsData[projectKey];
+                
+                if (project) {
+                    modalTitle.textContent = project.title;
+                    modalImage.innerHTML = `<img src="${project.image}" alt="${project.title}" />`;
+                    
+                    // Populate tech tags
+                    modalTech.innerHTML = project.tech.map(tech => 
+                        `<span class="tech-tag">${tech}</span>`
+                    ).join('');
+                    
+                    modalDescription.innerHTML = project.description;
+                    
+                    // Populate links
+                    modalLinks.innerHTML = project.links.map(link => 
+                        `<a href="${link.url}" class="modal-link" target="_blank">${link.text}</a>`
+                    ).join('');
+                    
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        // Close modal
+        modalClose.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Skill items pulse animation on scroll
+        const skillsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const icon = entry.target.querySelector('.skill-icon');
+                    icon.style.animation = 'skillPulse 0.6s ease-in-out';
+                }
+            });
+        });
+
+        document.querySelectorAll('.skill-item').forEach(skill => {
+            skillsObserver.observe(skill);
+        });
+
+        // Contact form handling
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Create mailto link
+            const mailtoLink = `mailto:jamesbenaya04@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            alert('Email client akan terbuka. Jika tidak, silakan kirim email manual ke jamesbenaya04@gmail.com');
+            
+            // Reset form
+            contactForm.reset();
+        });
+
+        // Download CV functionality
+        const downloadCV = document.getElementById('downloadCV');
+        downloadCV.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Create a simple CV content
+            const cvContent = `
+James Petra Benaya Prawira N
+UI/UX Designer & Web Developer
+Email: jamesbenaya04@gmail.com
+Phone: +62 881-7117-233
+
+PENDIDIKAN
+- UPN "Veteran" Jawa Timur - Sistem Informasi (2022-Present)
+
+KEAHLIAN TEKNIS
+- Frontend: HTML, CSS, JavaScript, React, Vue.js
+- Backend: PHP, Laravel, Node.js, MySQL
+- Mobile: Flutter, Dart
+- Design: Figma, UI/UX Design
+- Tools: Git, VS Code
+
+PROJECTS
+1. Deskalink - E-commerce Platform (Laravel 10, MySQL, Tailwind CSS)
+2. Tersehat - Sistem Informasi Kesehatan Desa (Figma)
+3. Tolongin - Community Helper Mobile App (Flutter, Firebase)
+
+KONTAK
+LinkedIn: linkedin.com/in/jamesbenaya
+GitHub: github.com/jamesbenaya
+Instagram: instagram.com/jamesbenaya
+            `;
+            
+            // Create and download text file
+            const blob = new Blob([cvContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'CV_James_Rivaldo.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+            
+            // Show download message
+            alert('CV berhasil didownload! File tersimpan sebagai CV_James_Rivaldo.txt');
+        });
+
+        // Contact items bounce effect
+        document.querySelectorAll('.contact-item').forEach((item, index) => {
+            item.addEventListener('mouseenter', () => {
+                item.style.animation = `bounce 0.6s ease`;
+            });
+            
+            item.addEventListener('animationend', () => {
+                item.style.animation = '';
+            });
+        });
+
+        // Blog items click effect
+        document.querySelectorAll('.blog-item').forEach(item => {
+            item.addEventListener('click', () => {
+                alert('Blog post akan segera tersedia! 🚀');
+            });
+        });
+
+        // Add CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes skillPulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.3) rotate(10deg); }
+                100% { transform: scale(1); }
+            }
+            
+            @keyframes bounce {
+                0%, 20%, 53%, 80%, 100% { transform: translateY(0); }
+                40%, 43% { transform: translateY(-10px); }
+                70% { transform: translateY(-5px); }
+                90% { transform: translateY(-2px); }
+            }
+
+            /* Improved form styling */
+            .form-group input::placeholder,
+            .form-group textarea::placeholder {
+                color: rgba(255, 255, 255, 0.5);
+            }
+
+            /* Enhanced modal animations */
+            @media (max-width: 768px) {
+                .modal-content {
+                    padding: 20px;
+                    margin: 10px;
+                    max-height: 95vh;
+                }
+                
+                .modal-tech {
+                    gap: 8px;
+                }
+                
+                .modal-tech .tech-tag {
+                    padding: 6px 12px;
+                    font-size: 0.8rem;
+                }
+            }
+
+            /* Performance optimizations */
+            * {
+                will-change: auto;
+            }
+
+            .portfolio-item,
+            .skill-item,
+            .blog-item {
+                will-change: transform, opacity;
+            }
+
+            /* Focus states for accessibility */
+            button:focus,
+            a:focus,
+            input:focus,
+            textarea:focus {
+                outline: 2px solid rgba(255, 255, 255, 0.5);
+                outline-offset: 2px;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Performance monitoring
+        if ('performance' in window) {
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+                    console.log(`Page loaded in ${loadTime}ms`);
+                }, 0);
+            });
+        }
+
+        // Service Worker registration for PWA capabilities
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                // Note: Service worker would be implemented in production
+                console.log('PWA capabilities ready');
+            });
+        }
+    </script>
+</body>
+</html>
